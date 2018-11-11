@@ -1,0 +1,19 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      # 默认注册地址 this.serviceUrl.put("defaultZone", "http://localhost:8761/eureka/");
+      defaultZone: http://localhost:${server.port}/eureka/
+    # 从 Eureka Server 获取服务注册信息的间隔时间（默认：30秒）
+    registry-fetch-interval-seconds: 30
+  server:
+    # 开发环境禁用eureka server的自我保护机制，建议在生产环境下打开此配置
+    enable-self-preservation: false
+  instance:
+    prefer-ip-address: true

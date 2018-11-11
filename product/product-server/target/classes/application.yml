@@ -1,0 +1,35 @@
+#server:
+#  port: 8080
+spring:
+  application:
+    name: product
+  datasource:
+    url: jdbc:mysql://localhost:3306/sell?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: mysql123
+mybatis:
+  # mybatis配置文件位置
+  config-location: classpath:mybatis/mybatis-config.xml
+  # mapper映射文件位置
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  # 别名包
+  type-aliases-package: cn.fulgens.product.entity
+mapper:
+  mappers:
+  - cn.fulgens.product.common.MyBaseMapper
+  # 取回主键的方式 MYSQL: SELECT LAST_INSERT_ID()
+  identity: MYSQL
+  # 还可设置为 mapper.before = false
+  order: AFTER
+  # insertSelective 和 updateByPrimaryKeySelective 中，是否判断字符串类型 !=''
+  not-empty: true
+  # 实体和表转换时的默认规则:驼峰转下划线小写形式
+  style: camelhumpAndLowercase
+  # 是否支持（getter 和 setter）在方法上使用注解，默认false
+  enableMethodAnnotation: true
+  # 枚举类型当成基本类型对待
+  enumAsSimpleType: true
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false
+  support-methods-arguments: true
