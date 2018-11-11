@@ -16,6 +16,7 @@ spring:
           username:
           password:
         default-label: master
+# config server 从本地读取配置文件
 #        native:
 #          search-locations: classpath:/config
 #  profiles:
