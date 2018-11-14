@@ -12,15 +12,24 @@ spring:
     config:
       server:
         git:
-          uri:
-          username:
+          uri: git@github.com:fulgens-cn/SpringCloudConfig.git
+          username: fulgenscn@gmail.com
+          # 私有仓库需要密码
           password:
+          # 配置远程配置中心仓库在本地的目录，默认会复制一份在本地
+          # 文件名如：file:/var/folders/w7/r3rkx7cs175145d2hykf77tr0000gn/T/config-repo-2962355997171944157/product-dev.yml
+          # basedir: /Users/fulgens/IdeaProjects/SpringCloudLearning/config-repo
         default-label: master
 # config server 从本地读取配置文件
 #        native:
 #          search-locations: classpath:/config
 #  profiles:
 #    active: native
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 server:
   port: 8762
 eureka:
@@ -30,3 +39,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

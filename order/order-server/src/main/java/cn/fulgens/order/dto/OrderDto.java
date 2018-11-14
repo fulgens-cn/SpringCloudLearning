@@ -3,6 +3,7 @@ package cn.fulgens.order.dto;
 import cn.fulgens.order.entity.OrderDetail;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -52,4 +53,19 @@ public class OrderDto {
      * 订单项集合
      */
     private List<OrderDetail> orderDetailList;
+
+    @Override
+    public String toString() {
+        return "OrderDto{" +
+                "orderId='" + orderId + '\'' +
+                ", buyerName='" + buyerName + '\'' +
+                ", buyerPhone='" + buyerPhone + '\'' +
+                ", buyerAddress='" + buyerAddress + '\'' +
+                ", buyerOpenid='" + buyerOpenid + '\'' +
+                ", orderAmount=" + orderAmount +
+                ", orderStatus=" + orderStatus +
+                ", payStatus=" + payStatus +
+                ", orderDetailList=" + orderDetailList +
+                '}';
+    }
 }
