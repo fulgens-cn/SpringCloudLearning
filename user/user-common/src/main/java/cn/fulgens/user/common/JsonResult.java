@@ -1,4 +1,4 @@
-package cn.fulgens.product.common;
+package cn.fulgens.user.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;

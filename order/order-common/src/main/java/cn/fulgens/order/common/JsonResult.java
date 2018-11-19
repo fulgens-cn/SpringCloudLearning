@@ -1,7 +1,11 @@
 package cn.fulgens.order.common;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class JsonResult<T> implements Serializable {
 
     private static final long serialVersionUID = -6754444739914048523L;
@@ -36,6 +40,7 @@ public class JsonResult<T> implements Serializable {
         return new JsonResult<>(code, msg, data);
     }
 
+    @JsonIgnore
     public boolean isOk() {
         return code == SUCCESS;
     }

@@ -10,4 +10,12 @@ public interface OrderService {
      * @return
      */
     OrderDto createOrder(OrderDto orderDto) throws RuntimeException;
+
+    /**
+     * 完结订单
+     * @param orderId
+     * @return
+     * @throws RuntimeException
+     */
+    OrderDto finishOrder(String orderId) throws RuntimeException;
 }

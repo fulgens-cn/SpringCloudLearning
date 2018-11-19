@@ -42,12 +42,12 @@ public class OrderDto {
     /**
      * 订单状态, 默认为新下单
      */
-    private Byte orderStatus;
+    private Integer orderStatus;
 
     /**
      * 支付状态, 默认未支付
      */
-    private Byte payStatus;
+    private Integer payStatus;
 
     /**
      * 订单项集合

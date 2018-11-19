@@ -70,7 +70,7 @@ public class ProductServiceImpl implements ProductService {
         example.createCriteria().andIn("productId", productIdList);
         List<ProductInfo> productInfoList = productInfoMapper.selectByExample(example);
         List<ProductInfoDto> productInfoDtoList = new ArrayList<>();
-        productIdList.stream().forEach(e -> {
+        productInfoList.stream().forEach(e -> {
             ProductInfoDto productInfoDto = new ProductInfoDto();
             BeanUtils.copyProperties(e, productInfoDto);
             productInfoDtoList.add(productInfoDto);
