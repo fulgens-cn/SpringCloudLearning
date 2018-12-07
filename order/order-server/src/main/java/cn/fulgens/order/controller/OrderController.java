@@ -3,6 +3,7 @@ package cn.fulgens.order.controller;
 import cn.fulgens.order.common.JsonResult;
 import cn.fulgens.order.dto.OrderDto;
 import cn.fulgens.order.service.OrderService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
